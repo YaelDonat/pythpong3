@@ -2,12 +2,12 @@ import pygame
 import random
 
 class Ball():
-    def __init__(self, x, y, size, direction):
+    def __init__(self, x, y, rayon, direction):
         self.x = x
         self.y = y
-        self.size = size
+        self.rayon = rayon
         self.direction = direction
-        self.rect = pygame.Rect(self.x, self.y, self.size[0], self.size[1])
+        self.rect = pygame.Rect(self.x, self.y, self.rayon, self.rayon)
         self.random_speed_y = random.randint(1, 4)
 
     def move(self, speed_x, speed_y):
