@@ -12,8 +12,8 @@ pip install pygame
 First, execute the [server.py] file.
 Then, run the [client.py] file.
 
-Player one controls : UP and DOWN arrows
-Player two controls : A and Z
+Player one controls : UP and DOWN arrows.
+Player two controls : A and Z.
 
 ## Contributing
 
