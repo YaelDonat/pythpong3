@@ -40,7 +40,7 @@ class Game:
                     if event.key == pygame.K_a:
                         self.speed_y_2 = -10
                     if event.key == pygame.K_z:
-                        self.speed_y_2 += 10
+                        self.speed_y_2 = 10
                 ###  
                 if event.type == pygame.KEYUP:
                     self.speed_y_2 = 0
@@ -49,7 +49,7 @@ class Game:
             if self.recv_data:
                 self.ball.rect.x = self.ball_x
                 self.ball.rect.y = self.ball_y
-                self.player1.rect = self.player1_position
+                self.player1.rect.y = self.player1_position
 
             self.player1.move(self.speed_y_1)
             self.player2.move(self.speed_y_2)
