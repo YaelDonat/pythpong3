@@ -14,7 +14,9 @@ class Game:
         pygame.display.set_caption("Ultimate Pong: 2P")
         self.run = True
         self.client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.ip, self.port = '127.0.0.1', 9999
+        self.ip= input("server ip: ")
+        self.port= int(input("port: "))
+        
         self.player1_x, self.player1_y = 20, 250
         self.player2_x, self.player2_y = 860, 250
         self.player_size = [20, 80]
@@ -73,11 +75,11 @@ class Game:
     
     def message(self, font, msg, msg_rect, color):
         if font == 'small':
-            font = pygame.font.Font('fonts\GamePlayed-vYL7.ttf', 20)
+            font = pygame.font.Font('fonts/GamePlayed-vYL7.ttf', 20)
         if font == 'medium':
-            font = pygame.font.Font('fonts\GamePlayed-vYL7.ttf', 30)
+            font = pygame.font.Font('fonts/GamePlayed-vYL7.ttf', 30)
         if font == 'big':
-            font = pygame.font.Font('fonts\GamePlayed-vYL7.ttf', 40)
+            font = pygame.font.Font('fonts/GamePlayed-vYL7.ttf', 40)
         msg = font.render(msg, True, color)
         self.screen.blit(msg, msg_rect)
 
