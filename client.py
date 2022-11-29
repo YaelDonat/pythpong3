@@ -29,6 +29,7 @@ class Game:
         self.ball_x, self.ball_y = None, None
         self.player1_position = 250
         self.recv_data = False
+        self.rect = pygame.Rect(0, 0, 900, 500)
     
     def play(self):
         self.client.connect((self.ip, self.port))
@@ -47,7 +48,10 @@ class Game:
                 if event.type == pygame.KEYUP:
                     self.speed_y_2 = 0
                 ###
-
+            self.player1.rect.clamp_ip(self.rect)
+            self.player2.move(self.speed_y_2)
+            self.player2.rect.clamp_ip(self.rect)
+            self.ball.rect.clamp_ip(self.rect)
             if self.recv_data:
                 self.ball.rect.x = self.ball_x
                 self.ball.rect.y = self.ball_y
